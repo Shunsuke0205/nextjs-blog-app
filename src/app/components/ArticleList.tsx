@@ -8,10 +8,10 @@ const ArticleList = () => {
       <article>
         <Link href="#">
           <Image
-            src="https://picsum.photos/800"
-            alt="elephant"
+            src="https://picsum.photos/1280/300"
+            alt="random image"
             width={1280}
-            height={720}
+            height={300}
           />
         </Link>
         <div>
