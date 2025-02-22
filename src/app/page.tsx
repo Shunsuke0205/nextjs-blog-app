@@ -8,7 +8,31 @@ export default function Home() {
         <ArticleList />
       </section>
 
-      
+      <aside className="w-full md:w-1/3 flex flex-col  px-3 md:pl-6">
+        <div className="bg-white shadow-md rounded p-4 mb-6 mt-4">
+          <h3 className="font-bold text-gray-900 mb-2">About me</h3>
+          <p className="text-gray-600">
+            My name is Shunsuke HIRATA.
+          </p>
+        </div>
+        <div className="bg-white shadow-md rounded p-4 mb-6 mt-4 w-full">
+          <h3 className="font-bold text-gray-900 mb-2">Category</h3>
+          <ul className="text-gray-600 mt-2">
+            <li>
+              <a href="#">Technology</a>
+            </li>
+            <li>
+              <a href="#">Automotive</a>
+            </li>
+            <li>
+              <a href="#">Finance</a>
+            </li>
+            <li>
+              <a href="#">Sports</a>
+            </li>
+          </ul>
+        </div>
+      </aside>
     </div>
   );
 }
