@@ -1,0 +1,34 @@
+{
+  "posts": [
+    {
+      "id": "post1",
+      "title": "The first post",
+      "content": "This is the first post content",
+      "date": "2025-02-23"
+    },
+    {
+      "id": "post2",
+      "title": "The second post",
+      "content": "This is the second post content",
+      "date": "2025-02-23"
+    },
+    {
+      "id": "post3",
+      "title": "The third post",
+      "content": "This is the third post content",
+      "date": "2025-02-23"
+    },
+    {
+      "id": "post4",
+      "title": "The fourth post",
+      "content": "This is the fourth post content",
+      "date": "2025-02-24"
+    },
+    {
+      "id": "post5",
+      "title": "The fifth post",
+      "content": "This is the fifth post content",
+      "date": "2025-02-24"
+    }
+  ]
+}
