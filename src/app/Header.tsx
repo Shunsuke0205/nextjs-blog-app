@@ -11,7 +11,7 @@ const Header = () => {
       </div>
       <div>
         <nav className="text-sm font-medium">
-          <Link href="/articles/new" className="bg-orange-300 py-3 px-3 rounded-md">記事を書く</Link>
+          <Link href="/articles/new" className="bg-orange-300 py-3 px-3 rounded-md">Post an article</Link>
         </nav>
       </div>
     </header>
