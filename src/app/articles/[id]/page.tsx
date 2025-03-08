@@ -5,7 +5,7 @@ import { getArticleDetail } from '@/blogAPI';
 const Article = async ({ params }: {params: {id: string} }) => {
 
   const articleDetail = await getArticleDetail(params.id);
-  console.log(articleDetail);
+
   return (
     <div className="max-w-3xl mx-auto p-5">
       <Image
@@ -15,10 +15,12 @@ const Article = async ({ params }: {params: {id: string} }) => {
         height={300}
       />
       <h1 className="text-4xl my-10">
-        the title
+        {articleDetail.title}
       </h1>
       <div className="text-lg leading-relaxed text-justify">
-        the body
+        <p>
+          {articleDetail.content}
+        </p>
       </div>
     </div>
   )
