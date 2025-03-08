@@ -9,7 +9,7 @@ const Article = async ({ params }: {params: {id: string} }) => {
   return (
     <div className="max-w-3xl mx-auto p-5">
       <Image
-        src="https://picsum.photos/1280/300"
+        src={`https://picsum.photos/id/${params.id}/1280/300`}
         alt="random image"
         width={1280}
         height={300}
