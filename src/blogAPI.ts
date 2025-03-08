@@ -6,7 +6,11 @@ export const getALLArticles = async (): Promise<Article[]> => {
     // "force-cache" for Static Side Generator (SSG)
   });
 
-  throw new Error("Failed!! (intentionally)");
+  if (!response.ok) {
+    throw new Error("Failed to fetch articles.");
+  }
+
+  await new Promise((resolve) => setTimeout(resolve, 2000 /* milliseconds */));
 
   const articles = await response.json();
   return articles;
