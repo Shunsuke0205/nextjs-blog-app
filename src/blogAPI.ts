@@ -66,3 +66,18 @@ export const createArticle = async (
   const newArticle = await response.json();
   return newArticle;
 }
+
+export const deleteArticle = async (id: string): Promise<Article> => {
+  const response = await fetch(`http://localhost:8000/posts/${id}`, {
+    method: "DELETE",
+  });
+
+  if (!response.ok) {
+    throw new Error("Failed to delete the article.");
+  }
+
+  await new Promise((resolve) => setTimeout(resolve, 1000 /* milliseconds */));
+
+  const deletedArticle = await response.json();
+  return deletedArticle;
+}
