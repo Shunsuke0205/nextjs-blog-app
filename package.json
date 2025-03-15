@@ -10,6 +10,7 @@
     "json-server": "json-server src/data/posts.json --port 8000"
   },
   "dependencies": {
+    "@supabase/supabase-js": "^2.49.1",
     "json-server": "^1.0.0-beta.3",
     "next": "15.1.7",
     "npm": "^11.2.0",
