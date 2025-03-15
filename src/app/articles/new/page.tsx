@@ -55,7 +55,18 @@ const CreateBlogPage = () => {
           ></textarea>
         </div>
         
-        <button type='submit' className='text-gray-900 border rounded-lg py-2 px-3 bg-orange-300' >Submit</button>
+        <button
+          type="submit"
+          className={`text-gray-900 border rounded-lg py-2 px-3
+            ${loading
+              ? "bg-orange-300 cursor-not-allowed"
+              : "bg-orange-500 hover:bg-orange-700"
+            }
+          `}
+          disabled={loading}
+        >
+            Submit
+        </button>
       </form>
     </div>
   )
