@@ -35,3 +35,34 @@ export const getArticleDetail = async (id: string): Promise<Article> => {
   const article = await response.json();
   return article;
 };
+
+export const createArticle = async (
+    id: string,
+    title: string,
+    content: string
+): Promise<Article> => {
+
+  const currentDateTime = new Date().toISOString();
+
+  const response = await fetch("http://localhost:8000/posts", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      id: id,
+      title: title,
+      content: content,
+      dateeee: currentDateTime
+    })
+  });
+
+  if (!response.ok) {
+    throw new Error("Failed to create an article.");
+  }
+
+  await new Promise((resolve) => setTimeout(resolve, 1000 /* milliseconds */));
+
+  const newArticle = await response.json();
+  return newArticle;
+}
