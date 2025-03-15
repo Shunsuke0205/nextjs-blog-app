@@ -1,6 +1,7 @@
-import React from 'react'
-import Image from 'next/image'
+import React from "react"
+import Image from "next/image"
 import { getArticleDetail } from '@/blogAPI';
+import DeleteButton from "@/app/components/DeleteButton";
 
 const Article = async ({ params }: {params: {id: string} }) => {
 
@@ -21,6 +22,9 @@ const Article = async ({ params }: {params: {id: string} }) => {
         <p>
           {articleDetail.content}
         </p>
+      </div>
+      <div className="text-right mt-3">
+        <DeleteButton id={articleDetail.id} />
       </div>
     </div>
   )
