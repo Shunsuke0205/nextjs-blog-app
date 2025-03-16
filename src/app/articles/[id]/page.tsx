@@ -1,11 +1,19 @@
 import React from "react"
 import Image from "next/image"
-import { getArticleDetail } from '@/blogAPI';
+// import { getArticleDetail } from '@/blogAPI';
 import DeleteButton from "@/app/components/DeleteButton";
 
 const Article = async ({ params }: {params: {id: string} }) => {
 
-  const articleDetail = await getArticleDetail(params.id);
+  // const articleDetail = await getArticleDetail(params.id);
+
+  const API_URL = process.env.NEXT_PUBLIC_API_URL;
+  const response = await fetch(`${API_URL}/api/${params.id}`, {
+    next: { revalidate: 60 /* seconds */ }, // ISR
+  })
+
+  const articleDetail = await response.json();
+  console.log(articleDetail);
 
   return (
     <div className="max-w-3xl mx-auto p-5">
