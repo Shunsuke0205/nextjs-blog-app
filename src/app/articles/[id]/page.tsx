@@ -2,6 +2,7 @@ import React from "react"
 import Image from "next/image"
 // import { getArticleDetail } from '@/blogAPI';
 import DeleteButton from "@/app/components/DeleteButton";
+import { hash } from "@/utils/hash";
 
 const Article = async ({ params }: {params: {id: string} }) => {
 
@@ -18,19 +19,6 @@ const Article = async ({ params }: {params: {id: string} }) => {
   const articleDetail = await response.json();
   console.log(articleDetail);
   
-  // define the function to hash the id
-  const hash = (s: string): number => {
-    let hashNumber = 0;
-    if (s.length == 0) {
-      return hashNumber;
-    }
-    for (let i = 0; i < s.length; ++i) {
-      const char = s.charCodeAt(i);
-      hashNumber = (hashNumber * 31 + char);
-    }
-    return hashNumber;
-  }
-
   const photoId = hash(id) % 1000 + 1;
 
   return (
