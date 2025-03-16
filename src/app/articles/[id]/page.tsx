@@ -17,11 +17,26 @@ const Article = async ({ params }: {params: {id: string} }) => {
 
   const articleDetail = await response.json();
   console.log(articleDetail);
+  
+  // define the function to hash the id
+  const hash = (s: string): number => {
+    let hashNumber = 0;
+    if (s.length == 0) {
+      return hashNumber;
+    }
+    for (let i = 0; i < s.length; ++i) {
+      const char = s.charCodeAt(i);
+      hashNumber = (hashNumber * 31 + char);
+    }
+    return hashNumber;
+  }
+
+  const photoId = hash(id) % 1000 + 1;
 
   return (
     <div className="max-w-3xl mx-auto p-5">
       <Image
-        src={`https://picsum.photos/id/${9 + parseInt(id)}/1280/300`}
+        src={`https://picsum.photos/id/${photoId}/1280/300`}
         alt="random image"
         width={1280}
         height={300}
