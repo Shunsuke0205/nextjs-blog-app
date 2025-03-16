@@ -7,8 +7,10 @@ const Article = async ({ params }: {params: {id: string} }) => {
 
   // const articleDetail = await getArticleDetail(params.id);
 
+  const { id } = await params;
+
   const API_URL = process.env.NEXT_PUBLIC_API_URL;
-  const response = await fetch(`${API_URL}/api/${params.id}`, {
+  const response = await fetch(`${API_URL}/api/${id}`, {
     next: { revalidate: 60 /* seconds */ }, // ISR
   })
 
@@ -18,7 +20,7 @@ const Article = async ({ params }: {params: {id: string} }) => {
   return (
     <div className="max-w-3xl mx-auto p-5">
       <Image
-        src={`https://picsum.photos/id/${9 + parseInt(params.id)}/1280/300`}
+        src={`https://picsum.photos/id/${9 + parseInt(id)}/1280/300`}
         alt="random image"
         width={1280}
         height={300}
