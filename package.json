@@ -3,11 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev -p 8000",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "json-server": "json-server src/data/posts.json --port 8000"
+    "json-server": "json-server src/data/posts.json --port 8001"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.49.1",
