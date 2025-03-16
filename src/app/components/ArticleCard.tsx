@@ -2,17 +2,20 @@ import React from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { Article } from '@/types'
+import { hash } from '@/utils/hash';
 
 type ArticleCardProps = {
   article: Article;
 };
 
 const ArticleCard = ({ article }: ArticleCardProps) => {
+  const photoId = hash(article.id) % 1000 + 1;
+
   return (
     <article className="shadow my-4" key={article.id}>
       <Link href={`articles/${article.id}`} className="hover:opacity-75">
         <Image
-          src={`https://picsum.photos/id/${9 + parseInt(article.id)}/1280/300`}
+          src={`https://picsum.photos/id/${photoId}/1280/300`}
           alt="random image"
           width={1280}
           height={300}
