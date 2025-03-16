@@ -1,6 +1,5 @@
-import Image from "next/image";
 import ArticleList from "./components/ArticleList";
-import { getALLArticles } from "@/blogAPI";
+// import { getALLArticles } from "@/blogAPI";
 import { supabase } from "@/utils/spabaseCliants";
 
 export default async function Home() {
