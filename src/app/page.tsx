@@ -4,9 +4,12 @@ import { getALLArticles } from "@/blogAPI";
 import { supabase } from "@/utils/spabaseCliants";
 
 export default async function Home() {
-  const articles = await getALLArticles();
+  // const articles = await getALLArticles();
 
   console.log(supabase);
+  const API_URL = process.env.NEXT_PUBLIC_API_URL;
+  const response = await fetch(`${API_URL}/api`, { cache: "no-store" /* Server Side Rendering */ });
+  const articles = await response.json();
 
   return (
     <div className="md:flex">
